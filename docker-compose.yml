@@ -1,0 +1,19 @@
+
+services:
+  monorepo-api:
+    build: 
+      context: .
+      dockerfile: ./apps/api/Dockerfile
+    container_name: monorepo-api
+    ports:
+      - 3000:3000
+    restart: always
+
+  admin-api:
+    build: 
+      context: .
+      dockerfile: ./apps/admin/Dockerfile
+    container_name: monorepo-admin
+    ports:
+      - 3001:3001
+    restart: always
