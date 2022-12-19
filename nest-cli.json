@@ -25,6 +25,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/admin/tsconfig.app.json"
       }
+    },
+    "redis-test": {
+      "type": "application",
+      "root": "apps/redis-test",
+      "entryFile": "main",
+      "sourceRoot": "apps/redis-test/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/redis-test/tsconfig.app.json"
+      }
     }
   }
 }
