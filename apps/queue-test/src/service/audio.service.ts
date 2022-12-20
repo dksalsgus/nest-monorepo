@@ -13,7 +13,7 @@ export class AudioService {
         {
           foo: `bar${index}`,
         },
-        { delay: 3000, priority: 100 / index },
+        // { delay: 3000, priority: 100 / index },
       );
     }
     return 'succes';
