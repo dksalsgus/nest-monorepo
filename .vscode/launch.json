@@ -8,6 +8,12 @@
             "name": "api dev",
             "request": "launch",
             "type": "node-terminal"
+        },
+        {
+            "command": "nest start queue-test --debug --watch",
+            "name": "queue dev",
+            "request": "launch",
+            "type": "node-terminal"
         }
 
     ]

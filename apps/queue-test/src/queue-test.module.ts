@@ -1,10 +1,20 @@
+import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
-import { QueueTestController } from './queue-test.controller';
-import { QueueTestService } from './queue-test.service';
+import { AudioController } from './controller/audio.controller';
+import { AudioConsumer } from './service/audio.consumer';
+import { AudioService } from './service/audio.service';
 
 @Module({
-  imports: [],
-  controllers: [QueueTestController],
-  providers: [QueueTestService],
+  imports: [
+    BullModule.registerQueue({
+      name: 'audio',
+      redis: {
+        host: 'localhost',
+        port: 6379,
+      },
+    }),
+  ],
+  controllers: [AudioController],
+  providers: [AudioService, AudioConsumer],
 })
 export class QueueTestModule {}
