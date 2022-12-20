@@ -5,7 +5,7 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FilesInterceptor } from '@nestjs/platform-express';
-import { ImageService } from './image.service';
+import { ImageService, ImageUtil } from './image.service';
 @Controller('/image')
 export class ImageController {
   constructor(private readonly imageService: ImageService) {}
@@ -13,7 +13,7 @@ export class ImageController {
   @Post('')
   @UseInterceptors(FilesInterceptor('files'))
   async resizeImage(@UploadedFiles() files: Express.Multer.File[]) {
-    const ret = await this.imageService.resizeImage(files);
+    const ret = await ImageUtil.resizeImage(files);
     return ret;
   }
 }

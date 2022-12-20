@@ -18,4 +18,14 @@ export class AudioService {
     }
     return 'succes';
   }
+
+  async addImageJob(files: Express.Multer.File[]) {
+    const dataList = files.map((e) => {
+      const { buffer, originalname } = e;
+      const data = buffer.toString('base64');
+      return { data, originalname };
+    });
+    await this.audioQueue.add('transcode', dataList);
+    return 'complete';
+  }
 }
