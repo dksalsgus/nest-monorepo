@@ -14,6 +14,12 @@
             "name": "queue dev",
             "request": "launch",
             "type": "node-terminal"
+        },
+        {
+            "command": "nest start cron-test --debug --watch",
+            "name": "cron dev",
+            "request": "launch",
+            "type": "node-terminal"
         }
 
     ]
