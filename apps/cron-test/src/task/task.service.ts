@@ -14,11 +14,16 @@ export class TaskService {
   handleInterval() {
     console.log('handle Interval');
     const job = this.schedulerRegistry.getCronJob('task-cron');
+    const { running } = job;
+    if (running === false) job.start();
     console.log(job.running);
   }
 
   @Timeout('task-timeout', 6000)
   handleTimeOut() {
     console.log('handle TimeOut');
+    const job = this.schedulerRegistry.getCronJob('task-cron');
+    job.stop();
+    console.log(job.running);
   }
 }
