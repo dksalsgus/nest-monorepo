@@ -43,6 +43,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/queue-test/tsconfig.app.json"
       }
+    },
+    "cron-test": {
+      "type": "application",
+      "root": "apps/cron-test",
+      "entryFile": "main",
+      "sourceRoot": "apps/cron-test/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cron-test/tsconfig.app.json"
+      }
     }
   }
 }
