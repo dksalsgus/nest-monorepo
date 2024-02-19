@@ -20,6 +20,12 @@
             "name": "cron dev",
             "request": "launch",
             "type": "node-terminal"
+        },
+        {
+            "command": "nest start auth --debug --watch",
+            "name": "auth dev",
+            "request": "launch",
+            "type": "node-terminal"
         }
 
     ]
